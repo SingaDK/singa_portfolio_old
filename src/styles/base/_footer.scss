@@ -1,0 +1,38 @@
+.footer {
+    grid-area: footer;
+    text-align: center;
+    display: grid;
+    gap: 0.5em;
+    grid-template-areas:
+        "contact . linkedin . links"
+        ". . copyright . .";
+    padding: 1rem;
+    grid-template-columns: repeat(0, 1fr); // Adjusted to accommodate five columns
+    grid-template-rows: auto; // Adjusted to use auto sizing for rows
+    place-items: center;
+
+    &-contacts {
+        grid-area: contact;
+    }
+
+    &-linkedin {
+        grid-area: linkedin;
+    }
+
+    &-links {
+        grid-area: links;
+    }
+
+    &-copyright {
+        grid-area: copyright;
+        display: flex; // Changed to flex to align items vertically
+        flex-direction: column; // Align items in a column
+        align-items: center; // Align items in the center
+
+        a {
+            color: hsl(var(--accent));
+            font-weight: bold;
+            margin-bottom: 0.5rem; // Added margin for spacing between links
+        }
+    }
+}

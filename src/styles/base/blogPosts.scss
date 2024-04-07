@@ -1,0 +1,21 @@
+article {
+    max-width: 50vw;
+    margin-inline: auto;
+    font-size: var(--fs-1);
+    text-align: justify;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        text-align: start;
+        color: hsl(var(--accent));
+        margin: 0.3rem;
+    }
+
+    a {
+        color: hsl(var(--accent-2));
+        text-decoration: underline;
+    }
+}

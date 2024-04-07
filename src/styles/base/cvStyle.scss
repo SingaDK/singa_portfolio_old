@@ -1,0 +1,70 @@
+/* cv-styles.scss */
+
+.cv-section {
+    max-width: 50vw;
+    margin-inline: auto;
+    font-size: var(--fs-1);
+    text-align: justify;
+
+    h1,
+    h2{
+        color: hsl(var(--accent-2));
+        text-decoration: underline;
+    }
+    h3{
+        text-align: start;
+        color: hsl(var(--green));
+        margin: 0.3rem;
+    }
+    h4,
+    h5,
+    h6 {
+        text-align: start;
+        color: hsl(var(--accent));
+        margin: 0.3rem;
+    }
+
+    a {
+        color: hsl(var(--accent-2));
+        text-decoration: underline;
+    }
+
+    p {
+        margin-left: 1em; /* Add indentation to the left of <p> */
+    }
+
+    li {
+        margin-left: 1em; /* Add indentation to the left of <p> */
+    }
+
+    .flex {
+        display: flex;
+        align-items: center; /* Adjust as needed */
+    }
+
+    .justify-between {
+        justify-content: space-between;
+    }
+
+    .flex-grow-1 {
+        flex-grow: 1;
+    }
+
+    .flex-shrink-0 {
+        flex-shrink: 0;
+    }
+
+    .text-primary {
+        color: hsl(var(--primary-color)); /* Adjust as needed */
+    }
+
+
+    > div {
+        margin-bottom: 1rem; /* Adjust as needed */
+    }
+
+    /* Add space between sections */
+    &:not(:last-child) {
+        margin-bottom: 2rem; /* Adjust as needed */
+    }
+}

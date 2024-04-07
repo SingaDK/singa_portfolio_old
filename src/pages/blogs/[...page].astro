@@ -1,0 +1,55 @@
+---
+type Props = {
+    page: Page<CollectionEntry<"blogs">>;
+};
+
+import type { Page } from "astro";
+import Card from "../../components/Card.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import type { GetStaticPathsOptions } from "astro";
+import { CollectionEntry, getCollection } from "astro:content";
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+    const allPosts = await getCollection("blogs");
+    const posts = allPosts.filter((post) => !post.data.draft);
+    return paginate(posts, { pageSize: 9 });
+}
+const { page } = Astro.props;
+const PageTitle = "Blogs";
+const desc = "liste de mes blogs";
+---
+
+<BaseLayout title={PageTitle} description={desc} canonicalURL={"blogs"}>
+    <section slot="main" class="grid">
+        <h2 class="sr-only">Liste des différents blogs</h2>
+        {
+            page.data.map(({ data, slug, collections }) => (
+                <Card
+                    title={data.title}
+                    pubDate={data.pubDate}
+                    description={data.description}
+                    url={`/${collections}/${slug}`}
+                    tags={data.tags}
+                />
+            ))
+        }
+        {
+            page.lastPage > 1 && (
+                <nav aria-label="pagination" class="nav-paginate">
+                    <ul>
+                        {page.url.prev ? (
+                            <li class="btn">
+                                <a href={page.url.prev}>Previous</a>
+                            </li>
+                        ) : null}
+                        {page.url.next ? (
+                            <li class="btn">
+                                <a href={page.url.next}>Next</a>
+                            </li>
+                        ) : null}
+                    </ul>
+                </nav>
+            )
+        }
+    </section>
+</BaseLayout>

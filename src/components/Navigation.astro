@@ -1,0 +1,28 @@
+---
+import { getSiteURl } from "../utils/getSiteUrl";
+import CrtSwitch from "./CrtSwitch.astro";
+import ThemeSwitcher from "./ThemeSwitcher.astro";
+---
+
+<nav aria-label="Main Menu" class="navigation">
+    <a href="#main" class="hidden-menu">Skip to main content</a>
+    <ThemeSwitcher />
+    <CrtSwitch />
+    <ul class="navigation-list">
+        <li class="navigation-list--links">
+            <a rel="prefetch" href={getSiteURl("/", Astro.site)}>Home</a>
+        </li>
+        <li class="navigation-list--links">
+            <a
+                rel="prefetch"
+                href={getSiteURl("cv", Astro.site).toString()}>CV</a
+            >
+        </li>
+        <li class="navigation-list--links">
+            <a
+                rel="prefetch"
+                href={getSiteURl("blogs", Astro.site).toString()}>Blog</a
+            >
+        </li>
+    </ul>
+</nav>

@@ -1,0 +1,45 @@
+---
+import { Icon } from "astro-icon";
+import { getSiteURl } from "../utils/getSiteUrl";
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+    <address class="footer-contacts">
+        <a
+            class="footer-links--github"
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            aria-label="github"
+            href="https://github.com/SingaDK"
+        >
+            <span class="sr-only">github</span>
+            <Icon name="github" size={18} aria-hidden="true" />
+        </a>
+    </address>
+    <address class="footer-linkedin">
+        <a
+            class="footer-links--linkedIn"
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            aria-label="linkedIn"
+            href="https://www.linkedin.com/in/singaravelan-neelakandan-8b8104121/"
+        >
+            <span class="sr-only">linkedIn</span>
+            <Icon name="linkedIn" size={18} aria-hidden="true" />
+        </a>
+    </address>
+    <p class="footer-links">
+        <a
+            class="footer-links--rss"
+            href={getSiteURl("rss.xml", Astro.site).toString()}
+            target="_blank"
+            ><span class="sr-only">RSS Feed</span>
+            <Icon name="rss" size={18} aria-hidden="true" />
+        </a>
+    </p>
+
+    <p class="footer-copyright">
+        <span> &#xa9; 2024 - {year} Singaravelan Neelakandan.</span>
+    </p>
+</footer>

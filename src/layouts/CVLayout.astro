@@ -1,0 +1,157 @@
+---
+export interface Props extends headProps {
+    className?: string;
+}
+
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import Head, { Props as headProps } from "../components/Head.astro";
+import CmdHeader from "../components/CmdHeader.astro";
+import { site } from "../data/site";
+import "../styles/base/cvStyle.scss";
+const { className = "container", ...head } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang={site.lang}>
+    <head>
+        <Head {...head} />
+    </head>
+    <body>
+        <slot name="header">
+            <CmdHeader title={head.title} />
+        </slot>
+        <Navigation />
+        <main class={className} id="main">
+            <!-- CV Content -->
+            <section class="cv-section">
+                <h2>Personal Information</h2>
+                <ul>
+                    <li>Name: Singaravelan Neelakandan</li>
+                    <li>Date of Birth: 25/09/1995</li>
+                    <li>Email: singara41@gmail.com</li>
+                    <li>Phone: +43 681 1083 0323</li>
+                    <li>Address: Brauquartier 19/1, Graz, 8055, Austria</li>
+                    <!-- Add more personal information as needed -->
+                </ul>
+            </section>
+
+            <section class="cv-section">
+                <h2>Education</h2>
+                <div class="flex justify-between">
+                    <div class="flex-grow-1">
+                        <h3>M.Sc. Electrical & Computer Engineering</h3>
+                        <p>RPTU Kaiserslautern-Landau</p>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <span class="text-primary">August 2017 - December 2021</span>
+                    </div>
+                </div>
+                <p>Embedded Systems Specialization</p>
+                <p>GPA: 1.6/5 'Gut'</p>
+                </div>
+                <div class="flex justify-between">
+                    <div class="flex-grow-1">
+                        <h3>B.Eng. Electronics & Communication Engineering</h3>
+                        <p>Anna University</p>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <span class="text-primary">August 2013 - May 2017</span>
+                    </div>
+                </div>
+                <p>GPA: 8.6/10 'First Class with Distinction'</p>
+            </section>
+            
+
+            <section class="cv-section">
+                <h2>Work Experience</h2>
+                <div>
+                    <h3>Infineon Technologies</h3>
+                    <div class="flex justify-between">
+                        <div class="flex-grow-1">
+                            <h4>Senior Embedded Software Engineer</h4>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <span class="text-primary">March 2022 - Present</span>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Scrum Master</li>
+                        <li>Responsible for in-house scheduler and contactless projects</li>
+                        <!-- Add more responsibilities as needed -->
+                    </ul>
+                    <div class="flex justify-between">
+                        <div class="flex-grow-1">
+                            <h4>Signal Processing/Deep Learning Intern</h4>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <span class="text-primary">February 2020 - May 2021</span>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Enabled Edge AI for Raspberry Pi to detect gestures from Radar using signal processing. Used Neural Network quantization to reduce the model size 4x with negligible loss in accuracy.</li>
+                        <!-- Add more responsibilities as needed -->
+                    </ul>
+                    <div class="flex justify-between">
+                        <div class="flex-grow-1">
+                            <h4>Formal Verification Intern</h4>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <span class="text-primary">April 2019 - September 2019</span>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Formally verified two IP block from active automotive Radar projects using OneSpin formal verification tool.</li>
+                        <!-- Add more responsibilities as needed -->
+                    </ul>
+                </div>
+                <div>
+                    <h3>RPTU Kaiserslautern-Landau</h3>
+                    <div class="flex justify-between">
+                        <div class="flex-grow-1">
+                            <h4>Master Thesis Student</h4>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <span class="text-primary">June 2021 - December 2021</span>
+                        </div>
+                    </div>
+                    <p>Topic - Structural Analysis for RTL designs to enhance verification and security evaluation</p>
+                    <ul>
+                        <li>This tool which is written in Python, uses Verible, an open source SystemVerilog parser, formatter, and linter to analyse the SystemVerilog RTL files 
+                            for register variable dependancies. This function is highly useful for finding the propagation of a confidential information within the hardware. 
+                            Thereby using the analysis report in verification that can find prescence of side-channel attacks and timing attacks(Spectre/Meltdown)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>German Research Center for Artificial Intelligence - DFKI</h3>
+                    <div class="flex justify-between">
+                        <div class="flex-grow-1">
+                            <h4>Research assistant Hi-Wi</h4>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <span class="text-primary">December 2017 - January 2018</span>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>High-Level Synthesis of Semi-Global Matching algorithm as an IP block using Xilinx Vivado for Augumented Reality.</li>
+                    </ul>
+                </div>
+                <!-- Add more work experience as needed -->
+            </section>
+
+            <section class="cv-section">
+                <h2>Skills</h2>
+                <ul>
+                    <li>Embedded Programming(C, Rust)</li>
+                    <li>Edge AI</li>
+                    <li>Contactless, NFC stack</li>
+                    <!-- Add more skills as needed -->
+                </ul>
+            </section>
+
+            <!-- Add more sections such as certifications, languages, etc. as needed -->
+
+        </main>
+        <Footer />
+    </body>
+</html>
