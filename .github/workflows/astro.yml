@@ -27,7 +27,7 @@ jobs:
               # node-version: 16 # The specific version of Node that should be used to build your site. Defaults to 16. (optional)
               # package-manager: yarn # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
         env:
-            SITE_URL:"" 
+            SITE_URL: "" 
             BASE_URL: ""
 
     deploy:
