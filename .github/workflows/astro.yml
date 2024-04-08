@@ -23,7 +23,7 @@ jobs:
       - name: Install, build, and upload your site
         uses: withastro/action@v0
     env:
-            SITE_URL: https://SingaDK.github.io
+            SITE_URL: https://singadk.github.io/singa_portfolio/
             BASE_URL: ""
 
   deploy:
