@@ -23,12 +23,12 @@ const desc = "List of my blogs";
     <section slot="main" class="grid">
         <h2 class="sr-only">List of different blogs</h2>
         {
-            page.data.map(({ data, slug }) => (
+            page.data.map(({ data, slug , collections}) => (
                 <Card
                     title={data.title}
                     pubDate={data.pubDate}
                     description={data.description}
-                    url={`/blogs/${slug}`}
+                    url={`/${collections}/${slug}`}
                     tags={data.tags}
                 />
             ))
