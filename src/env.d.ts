@@ -1,5 +1,5 @@
 /// <reference path="../.astro/types.d.ts" />
-/// <reference types="@astrojs/image/client" />
+/// <reference types="astrojs/client" />
 
 interface ImportMetaEnv {
     SITE: string;

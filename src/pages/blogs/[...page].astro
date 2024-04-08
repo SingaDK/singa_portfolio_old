@@ -16,12 +16,12 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 }
 const { page } = Astro.props;
 const PageTitle = "Blogs";
-const desc = "liste de mes blogs";
+const desc = "List of my blogs";
 ---
 
 <BaseLayout title={PageTitle} description={desc} canonicalURL={"blogs"}>
     <section slot="main" class="grid">
-        <h2 class="sr-only">Liste des différents blogs</h2>
+        <h2 class="sr-only">List of different blogs</h2>
         {
             page.data.map(({ data, slug }) => (
                 <Card

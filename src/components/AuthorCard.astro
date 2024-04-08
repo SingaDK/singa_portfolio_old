@@ -2,18 +2,17 @@
 import "../styles/components/AuthorCard.scss";
 import { site } from "../data/site";
 const a = site.author;
-import { Picture } from "@astrojs/image/components";
+import profilePic from '../assets/ascii.png';
 ---
 
 <article class="term card-author">
     <header class="card-author--header">
-        <Picture
+        <img
             alt=""
             sizes="(max-width: 375px) 75px, 150px"
-            src={a.profilePic}
+            src={profilePic}
             class="rounded"
             widths={[75, 150]}
-            aspectRatio={1}
         />
         <div class="card-author--spec">
             <h3 style={`--length: ${a.firstname.length}ch;`}>
