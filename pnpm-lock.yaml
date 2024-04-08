@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 devDependencies:
+  '@astrojs/image':
+    specifier: ^0.13.1
+    version: 0.13.1(astro@2.10.15)(sharp@0.31.3)
   '@astrojs/prefetch':
     specifier: ^0.1.2
     version: 0.1.2
@@ -50,6 +53,10 @@ devDependencies:
 
 packages:
 
+  /@altano/tiny-async-pool@1.0.3:
+    resolution: {integrity: sha512-B4lSen5B2M/aGtgQ12aJ9Ms4eZXCRtJMhM7p5KpAImPAeIaOojTWEKozIB/1xWwCLRZsy0SHW+OlOZQFOBOwJQ==}
+    dev: true
+
   /@ampproject/remapping@2.3.0:
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
@@ -64,6 +71,27 @@ packages:
 
   /@astrojs/compiler@2.7.1:
     resolution: {integrity: sha512-/POejAYuj8WEw7ZI0J8JBvevjfp9jQ9Wmu/Bg52RiNwGXkMV7JnYpsenVfHvvf1G7R5sXHGKlTcxlQWhoUTiGQ==}
+    dev: true
+
+  /@astrojs/image@0.13.1(astro@2.10.15)(sharp@0.31.3):
+    resolution: {integrity: sha512-H+3I0i8KU+oTc3HsVncE8VGEQkEJEXXi79EnK7nRBf6WS8pWAjVaGBKXkk7jZQv8rM/Qc+Bnvl+lGLQCF1ziOA==}
+    deprecated: '@astrojs/image is deprecated in favor of astro:assets. Please see the migration guide for more information: https://docs.astro.build/en/guides/upgrade-to/v3/\#removed-astrojsimage'
+    peerDependencies:
+      astro: ^2.0.4
+      sharp: '>=0.31.0'
+    peerDependenciesMeta:
+      sharp:
+        optional: true
+    dependencies:
+      '@altano/tiny-async-pool': 1.0.3
+      astro: 2.10.15(sass@1.74.1)(sharp@0.31.3)
+      http-cache-semantics: 4.1.1
+      image-size: 1.1.1
+      kleur: 4.1.5
+      magic-string: 0.27.0
+      mime: 3.0.0
+      sharp: 0.31.3
+      slash: 4.0.0
     dev: true
 
   /@astrojs/internal-helpers@0.1.2:
@@ -3393,6 +3421,14 @@ packages:
     engines: {node: '>= 4'}
     dev: true
 
+  /image-size@1.1.1:
+    resolution: {integrity: sha512-541xKlUw6jr/6gGuk92F+mYM5zaFAc5ahphvkqvNe2bQ6gVBkd6bfrmVJ2t4KDAfikAYZyIqTnktX3i6/aQDrQ==}
+    engines: {node: '>=16.x'}
+    hasBin: true
+    dependencies:
+      queue: 6.0.2
+    dev: true
+
   /immutable@4.3.5:
     resolution: {integrity: sha512-8eabxkth9gZatlwl5TBuJnCsoTADlL6ftEr7A4qgdaTsPyreilDSnUk57SO+jfKcNtxPa22U5KK6DSeAYhpBJw==}
     dev: true
@@ -3729,6 +3765,13 @@ packages:
 
   /lunr@2.3.9:
     resolution: {integrity: sha512-zTU3DaZaF3Rt9rhN3uBMGQD3dD2/vFQqnvZCDv4dl5iOzq2IZQqTxu90r4E5J+nP70J3ilqVCrbho2eWaeW8Ow==}
+    dev: true
+
+  /magic-string@0.27.0:
+    resolution: {integrity: sha512-8UnnX2PeRAPZuN12svgR9j7M1uWMovg/CEnIwIG0LFkXSJJe4PdfUGiTGl8V9bsBHFUtfVINcSyYxd7q+kx9fA==}
+    engines: {node: '>=12'}
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
 
   /magic-string@0.30.9:
@@ -4977,6 +5020,12 @@ packages:
     dev: true
     optional: true
 
+  /queue@6.0.2:
+    resolution: {integrity: sha512-iHZWu+q3IdFZFX36ro/lKBkSvfkztY5Y7HMiPlOUjhupPcG2JMfst2KKEpu5XndviX/3UhFbRngUPNKtgvtZiA==}
+    dependencies:
+      inherits: 2.0.4
+    dev: true
+
   /rc@1.2.8:
     resolution: {integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==}
     hasBin: true
@@ -5461,6 +5510,11 @@ packages:
   /slash@3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
     engines: {node: '>=8'}
+    dev: true
+
+  /slash@4.0.0:
+    resolution: {integrity: sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew==}
+    engines: {node: '>=12'}
     dev: true
 
   /source-map-js@1.2.0:
